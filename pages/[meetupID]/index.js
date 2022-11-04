@@ -33,7 +33,7 @@ export async function getStaticPaths() {
     .toArray();
   client.close();
   return {
-    fallback: false,
+    fallback: true,
     paths: meetsupIDFromDB.map((meetupId) => ({
       params: {
         meetupID: meetupId._id.toString(),
